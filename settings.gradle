@@ -1,3 +1,6 @@
 rootProject.name = "MyJetpackStudy"
 include ':app'
 include ':lifecycle'
+include ':viewmodel'
+include ':livedata'
+include ':livedata2'
