@@ -31,6 +31,8 @@ class ImageViewBindingAdapter {
 
         /**
          * 加载网络图片，如果图片资源为空，则加载默认图片
+         *
+         * requireAll 这个意思是 方法setImage 对应的形参为可传参数（三个形参可以不用全部传入）
          */
         @BindingAdapter(value = ["image", "defaultImage"], requireAll = false)
         @JvmStatic
