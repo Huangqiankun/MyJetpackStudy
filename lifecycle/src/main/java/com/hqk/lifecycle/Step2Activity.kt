@@ -2,6 +2,7 @@ package com.hqk.lifecycle
 
 import android.os.Bundle
 import android.os.SystemClock
+import android.view.View
 import android.widget.Chronometer
 import androidx.appcompat.app.AppCompatActivity
 
@@ -16,5 +17,7 @@ class Step2Activity : AppCompatActivity() {
         chronometer = findViewById(R.id.chronometer)
         lifecycle.addObserver(chronometer!!)
     }
+
+    fun onNext(view: View) {}
 
 }
