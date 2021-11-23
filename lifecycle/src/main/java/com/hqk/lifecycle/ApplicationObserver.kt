@@ -38,5 +38,5 @@ class ApplicationObserver : LifecycleObserver {
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun onDestroy() {
         Log.d(tag, "Lifecycle.Event.ON_DESTROY")
-    }
+    }//
 }
