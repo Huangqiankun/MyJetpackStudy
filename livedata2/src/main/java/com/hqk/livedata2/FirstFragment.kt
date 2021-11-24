@@ -16,16 +16,17 @@ class FirstFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        var rootView = inflater.inflate(R.layout.fragment_first, container, false)
+        savedInstanceState: Bundle?): View? {
 
+        var rootView = inflater.inflate(R.layout.fragment_first, container, false)
         var seekBar = rootView.findViewById<SeekBar>(R.id.seekBar)
+
         val viewModel = ViewModelProvider(
             requireActivity(), AndroidViewModelFactory(
                 requireActivity().application
             )
         )[MyViewModel::class.java]
+
 
         viewModel.getProgress()!!.observe(requireActivity(), Observer {
             seekBar.progress = it
@@ -42,6 +43,5 @@ class FirstFragment : Fragment() {
 
         return rootView
     }
-
 
 }

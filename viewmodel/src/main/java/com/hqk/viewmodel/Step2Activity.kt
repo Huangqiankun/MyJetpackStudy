@@ -17,8 +17,10 @@ class Step2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         textView = findViewById(R.id.textView)
+
         viewModel =
             ViewModelProvider(this, AndroidViewModelFactory(application))[MyViewModel::class.java]
+
         textView!!.text = String.valueOf(viewModel!!.number)
     }
 
