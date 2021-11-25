@@ -9,7 +9,6 @@
             name="userInfo"
             type="com.hqk.databinding2.UserInfo" />
 
-        <import type="com.hqk.databinding2.StarUtils" />
 
         <variable
             name="clickHandle"

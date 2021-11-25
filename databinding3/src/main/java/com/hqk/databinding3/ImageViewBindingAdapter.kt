@@ -10,23 +10,24 @@ class ImageViewBindingAdapter {
 
 
     companion object {
-        // app:image="@{networkImage}" 和对应的app:image的image相互对应
-        @BindingAdapter("image")
-        @JvmStatic
-        fun setImage(imageView: ImageView, url: String?) {
-            if (!TextUtils.isEmpty(url)) {
-                Glide.with(imageView.context).load(url).into(imageView)
-                return
-            }
-            imageView.setBackgroundColor(Color.GRAY)
-        }
 
-        // app:defaultImage="@{localImage}"
-        @BindingAdapter("defaultImage")
-        @JvmStatic
-        fun setImage(imageView: ImageView, id: Int) {
-            imageView.setImageResource(id)
-        }
+//        // app:image="@{networkImage}" 和对应的app:image的image相互对应
+//        @BindingAdapter("image")
+//        @JvmStatic
+//        fun setImage(imageView: ImageView, url: String?) {
+//            if (!TextUtils.isEmpty(url)) {
+//                Glide.with(imageView.context).load(url).into(imageView)
+//                return
+//            }
+//            imageView.setBackgroundColor(Color.GRAY)
+//        }
+//
+//        // app:defaultImage="@{localImage}"
+//        @BindingAdapter("defaultImage")
+//        @JvmStatic
+//        fun setImage(imageView: ImageView, id: Int) {
+//            imageView.setImageResource(id)
+//        }
 
 
         /**
@@ -45,8 +46,6 @@ class ImageViewBindingAdapter {
 
         }
 
-
     }
-
 
 }

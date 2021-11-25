@@ -7,7 +7,6 @@ import androidx.core.content.ContextCompat
 class ImageUtils {
 
     companion object {
-
         @JvmStatic
         fun getDrawable(context: Context, resourceId: Int): Drawable? {
             return ContextCompat.getDrawable(context, resourceId)

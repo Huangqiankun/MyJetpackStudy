@@ -14,8 +14,6 @@
             name="clickHandle"
             type="com.hqk.databinding2.ClickHandle" />
 
-        <import type="com.hqk.databinding2.ImageUtils" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

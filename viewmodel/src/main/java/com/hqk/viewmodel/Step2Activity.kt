@@ -18,8 +18,14 @@ class Step2Activity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         textView = findViewById(R.id.textView)
 
-        viewModel =
-            ViewModelProvider(this, AndroidViewModelFactory(application))[MyViewModel::class.java]
+//        viewModel =
+//            ViewModelProvider(this, AndroidViewModelFactory(application))[MyViewModel::class.java]
+        viewModel = ViewModelProvider(this)[MyViewModel::class.java]
+
+//        viewModel =
+//            ViewModelProvider(this, AndroidViewModelFactory(application))[MyViewModel::class.java]
+
+//        val model: MyViewModel by MyViewModel(application)
 
         textView!!.text = String.valueOf(viewModel!!.number)
     }

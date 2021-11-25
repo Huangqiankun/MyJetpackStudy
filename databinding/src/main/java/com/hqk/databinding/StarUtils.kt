@@ -1,9 +1,7 @@
 package com.hqk.databinding
 
-open class StarUtils {
-
+class StarUtils {
     companion object {
-
         @JvmStatic
         fun getStar(star: Int): String? {
             when (star) {
@@ -16,7 +14,4 @@ open class StarUtils {
             return ""
         }
     }
-
-
-
 }

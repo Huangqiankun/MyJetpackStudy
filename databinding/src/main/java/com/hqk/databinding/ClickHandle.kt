@@ -6,13 +6,7 @@ import android.widget.Toast
 
 class ClickHandle {
 
-    private var context: Context? = null
-
-    constructor(context: Context?) {
-        this.context = context
-    }
-
-    fun buttonOnClick(view: View?) {
-        Toast.makeText(context, "喜欢", Toast.LENGTH_SHORT).show()
+    fun buttonOnClick(view: View) {
+        Toast.makeText(view.context, "喜欢", Toast.LENGTH_SHORT).show()
     }
 }

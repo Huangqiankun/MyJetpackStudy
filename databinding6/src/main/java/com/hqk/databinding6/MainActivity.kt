@@ -10,8 +10,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
+
         var activityMainBinding: ActivityMainBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
+
         activityMainBinding.recyclerView.layoutManager = LinearLayoutManager(this)
         var adapter = RecyclerViewAdapter(UserInfoUtils.get())
         activityMainBinding.recyclerView.adapter = adapter

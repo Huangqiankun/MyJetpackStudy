@@ -14,12 +14,15 @@ class MainActivity : AppCompatActivity() {
 
         var activityMainBinding: ActivityMainBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
-        var viewModel: MyViewModel = ViewModelProvider(
-            this,
-            ViewModelProvider.AndroidViewModelFactory(application)
-        )[MyViewModel::class.java]
+
+
+
+        var viewModel: MyViewModel = ViewModelProvider(this)[MyViewModel::class.java]
+
+//      var  viewModel =
+//            ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application))[MyViewModel::class.java]
 
         activityMainBinding.viewModel = viewModel
-        activityMainBinding.lifecycleOwner = this
+        activityMainBinding.lifecycleOwner = this //使对应的dataBinding拥有Lifecycle功能
     }
 }

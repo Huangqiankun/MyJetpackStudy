@@ -19,7 +19,6 @@ class UserViewModel : BaseObservable {
         return user!!.userName
     }
 
-
     fun setUserName(userName: String?) {
         if (userName != null && userName != user!!.userName) {
             user!!.userName = userName
