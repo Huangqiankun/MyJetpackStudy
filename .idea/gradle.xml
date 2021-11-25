@@ -4,7 +4,7 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="testRunner" value="GRADLE" />
+        <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$PROJECT_DIR$/../../Program Files/gradle-6.7.1" />
@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/lifecycle" />
             <option value="$PROJECT_DIR$/livedata" />
             <option value="$PROJECT_DIR$/livedata2" />
+            <option value="$PROJECT_DIR$/room" />
             <option value="$PROJECT_DIR$/viewmodel" />
           </set>
         </option>
