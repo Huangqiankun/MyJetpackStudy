@@ -2,6 +2,7 @@ package com.hqk.room2
 
 import android.app.Application
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -21,25 +22,25 @@ class StudentViewModel(application: Application) : AndroidViewModel(application)
     }
 
 
-    fun insertStudent(vararg student: Student) {
+    private fun insertStudent(vararg student: Student) {
         viewModelScope.launch(Dispatchers.Default) {
             repository!!.insertStudent(*student)
         }
     }
 
-    fun deleteStudent(vararg student: Student) {
+    private fun deleteStudent(vararg student: Student) {
         viewModelScope.launch(Dispatchers.Default) {
             repository!!.deleteStudent(*student)
         }
     }
 
-    fun updateStudent(vararg student: Student) {
+    private fun updateStudent(vararg student: Student) {
         viewModelScope.launch(Dispatchers.Default) {
             repository!!.updateStudent(*student)
         }
     }
 
-    fun deleteAllStudents() {
+    private fun deleteAllStudents() {
         viewModelScope.launch(Dispatchers.Default) {
             repository!!.deleteAllStudents()
         }
@@ -51,6 +52,28 @@ class StudentViewModel(application: Application) : AndroidViewModel(application)
         }
         return liveDataStudent
     }
+
+
+    fun mInsert() {
+        val s1 = Student("hqk", 26)
+        val s2 = Student("Rose", 18)
+        insertStudent(s1, s2)
+    }
+
+    fun mClear() {
+        deleteAllStudents()
+    }
+
+    fun mDelete() {
+        var s1 = Student(3)
+        deleteStudent(s1)
+    }
+
+    fun mUpdate() {
+        val s1 = Student(2, "Jason", 21)
+        updateStudent(s1)
+    }
+
 
 
 }

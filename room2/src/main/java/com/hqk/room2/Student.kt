@@ -60,4 +60,10 @@ class Student {
     constructor(id: Int) {
         this.id = id
     }
+
+    @Ignore
+    constructor(id: Int, name: String?) {
+        this.id = id
+        this.name = name
+    }
 }
