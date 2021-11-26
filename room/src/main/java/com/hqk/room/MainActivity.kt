@@ -54,8 +54,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
             val students: ArrayList<Student> = studentDao!!.getAllStudent() as ArrayList<Student>
 
             withContext(Dispatchers.Main) {
-                listStudent.clear()
-                listStudent.addAll(students)
+                adapter!!.students = students
                 adapter!!.notifyDataSetChanged()
             }
         }
