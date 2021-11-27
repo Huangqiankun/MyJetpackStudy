@@ -11,44 +11,44 @@ import kotlinx.coroutines.*
 
 class StudentViewModel(application: Application) : AndroidViewModel(application) {
 
-    private var repository: StudentRepository? = StudentRepository(application)
+    private val repository by lazy { StudentRepository(application) }
 
 
     private var liveDataStudent: LiveData<List<Student>>? = null
 
     init {
-        liveDataStudent = repository!!.getAllStudentsLive()
+        liveDataStudent = repository.getAllStudentsLive()
         Log.d("StudentViewModel", "init liveDataStudent ${liveDataStudent?.value?.size}")
     }
 
 
     private fun insertStudent(vararg student: Student) {
         viewModelScope.launch(Dispatchers.Default) {
-            repository!!.insertStudent(*student)
+            repository.insertStudent(*student)
         }
     }
 
     private fun deleteStudent(vararg student: Student) {
         viewModelScope.launch(Dispatchers.Default) {
-            repository!!.deleteStudent(*student)
+            repository.deleteStudent(*student)
         }
     }
 
     private fun updateStudent(vararg student: Student) {
         viewModelScope.launch(Dispatchers.Default) {
-            repository!!.updateStudent(*student)
+            repository.updateStudent(*student)
         }
     }
 
     private fun deleteAllStudents() {
         viewModelScope.launch(Dispatchers.Default) {
-            repository!!.deleteAllStudents()
+            repository.deleteAllStudents()
         }
     }
 
     fun getAllStudentsLive(): LiveData<List<Student>>? {
         viewModelScope.launch(Dispatchers.Default) {
-            liveDataStudent = repository!!.getAllStudentsLive()
+            liveDataStudent = repository.getAllStudentsLive()
         }
         return liveDataStudent
     }
@@ -73,7 +73,6 @@ class StudentViewModel(application: Application) : AndroidViewModel(application)
         val s1 = Student(2, "Jason", 21)
         updateStudent(s1)
     }
-
 
 
 }

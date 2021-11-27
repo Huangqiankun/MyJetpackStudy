@@ -29,30 +29,20 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
         val database: MyDatabase? = MyDatabase.getInstance(this)
         studentDao = database!!.getStudentDao()
-
-
     }
 
     fun mInsert(view: View?) {
-
         launch(Dispatchers.Default) {
-            Log.d("hqk", "${Thread.currentThread().name}:after sleep.")
             val s1 = Student("Jack", 22)
             val s2 = Student("Rose", 18)
             studentDao!!.insertStudent(s1, s2)
-            withContext(Dispatchers.Main) {
-                Log.d("hqk", "${Thread.currentThread().name}: withContext(Dispatchers.Main).")
-            }
+
         }
-
-
     }
 
     fun mQuery(view: View?) {
-
         launch(Dispatchers.Default) {
             val students: ArrayList<Student> = studentDao!!.getAllStudent() as ArrayList<Student>
-
             withContext(Dispatchers.Main) {
                 adapter!!.students = students
                 adapter!!.notifyDataSetChanged()

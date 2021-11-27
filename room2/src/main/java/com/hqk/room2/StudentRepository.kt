@@ -13,11 +13,11 @@ class StudentRepository {
         studentDao = database!!.getStudentDao()
     }
 
-    suspend fun insertStudent(vararg student: Student?) {
+    fun insertStudent(vararg student: Student?) {
         studentDao!!.insertStudent(*student)
     }
 
-    suspend fun deleteStudent(vararg student: Student) {
+    fun deleteStudent(vararg student: Student) {
         studentDao!!.deleteStudent(*student)
     }
 
@@ -34,7 +34,7 @@ class StudentRepository {
         return studentDao!!.getAllStudentsLive()
     }
 
-     fun queryAll(): List<Student>? {
+    fun queryAll(): List<Student>? {
         return studentDao!!.queryAll()
     }
 }

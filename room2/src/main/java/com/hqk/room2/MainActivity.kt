@@ -20,9 +20,6 @@ class MainActivity : AppCompatActivity() {
     private var adapter: StudentRecyclerViewAdapter? = null
     private var listStudent: ArrayList<Student> = ArrayList()
 
-
-//    private val viewModel: StudentViewModel by viewModels()
-
     private var viewModel: StudentViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,12 +30,6 @@ class MainActivity : AppCompatActivity() {
 
 
         viewModel = ViewModelProvider(this)[StudentViewModel::class.java]
-
-//        viewModel = ViewModelProvider(
-//            this, ViewModelProvider.AndroidViewModelFactory(
-//                application
-//            )
-//        )[StudentViewModel::class.java]
 
         binding.studentViewModel = viewModel
         binding.lifecycleOwner = this
@@ -55,6 +46,4 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
-
-
 }
