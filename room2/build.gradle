@@ -18,6 +18,20 @@ android {
         dataBinding{
             enabled = true
         }
+//        javaCompileOptions {
+////            kaptOptions{
+////                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]//指定数据库schema导出的位置
+////            }
+//            annotationProcessorOptions {
+//                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]//指定数据库schema导出的位置
+//            }
+//        }
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas".toString())
+            }
+        }
 
     }
 

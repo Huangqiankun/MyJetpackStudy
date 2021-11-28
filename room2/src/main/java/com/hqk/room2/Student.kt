@@ -44,6 +44,16 @@ class Student {
     @ColumnInfo(name = "age", typeAffinity = ColumnInfo.INTEGER)
     var age = 0
 
+    @ColumnInfo(name = "sex", typeAffinity = ColumnInfo.INTEGER)
+    var sex=0
+
+//    @ColumnInfo(name = "bar_data", typeAffinity = ColumnInfo.INTEGER)
+//    var barData = 0
+//
+//    //V4.0
+//    @ColumnInfo(name = "sex", typeAffinity = ColumnInfo.TEXT)
+//    var sex: String? = null
+
     constructor(id: Int, name: String?, age: Int) {
         this.id = id
         this.name = name
