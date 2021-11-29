@@ -18,7 +18,6 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_detail, container, false)
     }
 
@@ -28,15 +27,13 @@ class DetailFragment : Fragment() {
 
 //        var args = arguments
 //        var userName: String? = args?.getString("userName")
-////        args?.getInt("userName")
+//        args?.getInt("userName")
 //        Log.d("hqk", "userName is $userName")
-
 
         val args = HomeFragmentArgs.fromBundle(requireArguments())
         val userName = args.userName
         val age = args.age
         Log.d("hqk", "$userName,$age")
-
 
         val button: Button? = view?.findViewById(R.id.button2)
         button?.setOnClickListener {
