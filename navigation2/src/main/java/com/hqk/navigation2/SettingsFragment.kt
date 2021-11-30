@@ -11,13 +11,15 @@ class SettingsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        //这句代码和下面onCreateOptionsMenu相互对应，当为true时，将会调用onCreateOptionsMenu方法
         setHasOptionsMenu(true)
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings, container, false)
     }
 
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        //当加载这个Fragment时，对应菜单消失
         menu.clear()
         super.onCreateOptionsMenu(menu, inflater)
     }
