@@ -19,4 +19,5 @@ include ':navigation3'
 include ':workmanager'
 include ':paging'
 include ':paging2'
+include ':paging3'
 
