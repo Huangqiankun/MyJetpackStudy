@@ -29,7 +29,7 @@ class MovieBoundaryCallback : BoundaryCallback<Movie> {
 
     override fun onZeroItemsLoaded() {
         super.onZeroItemsLoaded()
-        //加载第一页数据
+        //加载第一页数据!
         getTopData()
     }
 
