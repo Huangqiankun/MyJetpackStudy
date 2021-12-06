@@ -21,3 +21,4 @@ include ':paging'
 include ':paging2'
 include ':paging3'
 
+include ':paging4'
