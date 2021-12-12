@@ -19,35 +19,36 @@ class StudentViewModel(application: Application) : AndroidViewModel(application)
     init {
         liveDataStudent = repository.getAllStudentsLive()
         Log.d("StudentViewModel", "init liveDataStudent ${liveDataStudent?.value?.size}")
+
     }
 
 
     private fun insertStudent(vararg student: Student) {
-        viewModelScope.launch(Dispatchers.Default) {
+        viewModelScope.launch (Dispatchers.IO){
             repository.insertStudent(*student)
         }
     }
 
     private fun deleteStudent(vararg student: Student) {
-        viewModelScope.launch(Dispatchers.Default) {
+        viewModelScope.launch (Dispatchers.IO) {
             repository.deleteStudent(*student)
         }
     }
 
     private fun updateStudent(vararg student: Student) {
-        viewModelScope.launch(Dispatchers.Default) {
+        viewModelScope.launch  (Dispatchers.IO){
             repository.updateStudent(*student)
         }
     }
 
     private fun deleteAllStudents() {
-        viewModelScope.launch(Dispatchers.Default) {
+        viewModelScope.launch (Dispatchers.IO) {
             repository.deleteAllStudents()
         }
     }
 
     fun getAllStudentsLive(): LiveData<List<Student>>? {
-        viewModelScope.launch(Dispatchers.Default) {
+        viewModelScope.launch {
             liveDataStudent = repository.getAllStudentsLive()
         }
         return liveDataStudent

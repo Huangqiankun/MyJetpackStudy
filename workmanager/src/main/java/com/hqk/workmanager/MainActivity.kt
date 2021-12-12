@@ -78,12 +78,12 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
                 }
             })
 
-        //取消任务
-        launch {
-            delay(2000)
-            workManager.cancelWorkById(workRequest1.id)
-            Log.d("hqk", "cancel Work")
-        }
+//        //取消任务
+//        launch {
+//            delay(2000)
+//            workManager.cancelWorkById(workRequest1.id)
+//            Log.d("hqk", "cancel Work")
+//        }
 
     }
 }

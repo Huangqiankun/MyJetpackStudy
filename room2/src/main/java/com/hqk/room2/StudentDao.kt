@@ -26,5 +26,5 @@ interface StudentDao {
     fun getStudentById(id: Int): List<Student>?
 
     @Query("DELETE FROM student")
-     fun deleteAllStudents()
+    fun deleteAllStudents()
 }
