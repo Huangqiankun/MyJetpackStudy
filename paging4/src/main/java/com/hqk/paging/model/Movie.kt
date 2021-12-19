@@ -27,24 +27,5 @@ class Movie {
     var cover: String? = null
 
 
-    override fun toString(): String {
-        return "Movie{" +
-                "NO=" + NO +
-                ", id=" + id +
-                ", title='" + title + '\'' +
-                ", rate='" + rate + '\'' +
-                ", cover='" + cover + '\'' +
-                '}'
-    }
 
-    override fun equals(o: Any?): Boolean {
-        if (this === o) return true
-        if (o == null || javaClass != o.javaClass) return false
-        val movie: Movie = o as Movie
-        return NO == movie.NO && id == movie.id && title == movie.title && rate == movie.rate && cover == movie.cover
-    }
-
-    override fun hashCode(): Int {
-        return Objects.hash(NO, id, title, rate, cover)
-    }
 }

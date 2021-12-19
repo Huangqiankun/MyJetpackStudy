@@ -15,6 +15,10 @@ class MovieDataSource : PositionalDataSource<Movie>() {
         const val PER_PAGE = 8
     }
 
+
+    /**
+     * 加载初始列表数据
+     */
     override fun loadInitial(params: LoadInitialParams, callback: LoadInitialCallback<Movie>) {
         val startPosition = 0
 
@@ -31,13 +35,14 @@ class MovieDataSource : PositionalDataSource<Movie>() {
                             response.body()!!.start,
                             response.body()!!.total
                         )
-                        Log.d("ning", "loadInitial:" + response.body()!!.movieList)
+                        Log.d("hqk", "loadInitial:" + response.body()!!.movieList)
                     }
                 }
 
                 override fun onFailure(call: Call<Movies?>, t: Throwable) {}
             })
     }
+
 
     override fun loadRange(params: LoadRangeParams, callback: LoadRangeCallback<Movie>) {
         RetrofitClient.getInstance()
@@ -48,7 +53,7 @@ class MovieDataSource : PositionalDataSource<Movie>() {
                     if (response.body() != null) {
                         //把数据传递给PagedList
                         callback.onResult(response.body()!!.movieList!!)
-                        Log.d("ning", "loadRange:" + response.body()!!.movieList)
+                        Log.d("hqk", "loadRange:" + response.body()!!.movieList)
                     }
                 }
 

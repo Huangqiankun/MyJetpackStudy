@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RetrofitClient {
 
     companion object {
-        private const val BASE_URL = "http://10.0.0.130:8080/pagingserver/"
+        private const val BASE_URL = "http://192.168.0.104:8080/pagingserver/"
         private var mInstance: RetrofitClient? = null
 
         @Synchronized

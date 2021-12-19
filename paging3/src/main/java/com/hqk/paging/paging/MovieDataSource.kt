@@ -34,7 +34,7 @@ class MovieDataSource : ItemKeyedDataSource<Int, Movie>() {
                     if (response.body() != null) {
                         //把数据传递给PagedList
                         callback.onResult(response.body()!!)
-                        Log.d("ning", "loadInitial:" + response.body())
+                        Log.d("hqk", "loadInitial:" + response.body())
                     }
                 }
 
@@ -54,7 +54,7 @@ class MovieDataSource : ItemKeyedDataSource<Int, Movie>() {
                     if (response.body() != null) {
                         //把数据传递给PagedList
                         callback.onResult(response.body()!!)
-                        Log.d("ning", "loadInitial:" + response.body())
+                        Log.d("hqk", "loadInitial:" + response.body())
                     }
                 }
 

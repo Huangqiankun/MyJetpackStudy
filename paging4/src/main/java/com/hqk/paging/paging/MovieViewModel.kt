@@ -37,6 +37,8 @@ class MovieViewModel : AndroidViewModel {
      * 刷新
      */
     fun refresh() {
+        MovieBoundaryCallback.FIRST_PAGE=1
+
         viewModelScope.launch(Dispatchers.IO) {
             MyDatabase.getInstance(getApplication())
                 .getMovieDao()
