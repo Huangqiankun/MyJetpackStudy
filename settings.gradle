@@ -22,3 +22,4 @@ include ':paging2'
 include ':paging4'
 include ':paging3'
 
+include ':jetpack_paging03'
